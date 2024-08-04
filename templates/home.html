@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="welcome">
+	<img src="{% static 'giphy.gif' %}" width="500" height="500" >
+	<a href="{% url 'animation' %}" style="text-decoration: none;"><button class="submit">Click to Start</button></a>
+	</div>
+{% endblock %}

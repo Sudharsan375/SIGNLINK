@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="form-container">
+	<div class="form-image">
+     	<img src="{% static 'Signup img.jpg' %}" alt="" width="475px" height="500px" style="border-radius: 15px 0px 0px 15px;">
+	</div>
+	<div class="form-style">
+		<h1>Sign Up</h1>
+	    <form class="my-form" action="." method="post">
+			{% csrf_token %}
+			{{ form }}
+			<div class="login-btn">
+				<input class="submit" type="submit" value="Sign Up">
+			</div>
+		</form>
+		<p style="margin-top: 30px;">Already Have an Account? <a href="{% url 'login' %}">Log In</a></p>
+    </div>
+</div>
+
+<script type="text/javascript">
+	document.getElementsByTagName("span")[0].innerHTML="";
+	document.getElementsByTagName("span")[1].innerHTML="";
+</script>
+{% endblock %}

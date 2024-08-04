@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="form-container">
+	<div class="form-image">
+		<img src="{% static 'Login img.jpg' %}" alt="" width="475px" height="500px" style="border-radius: 15px 0px 0px 15px;">
+	</div>
+	<div class="form-style">
+		<h1>Log in</h1>
+	    <form class="my-form" action="." method="post">
+	    	{% csrf_token %}
+	    	{{ form }}
+	    	{% if request.GET.next %}
+	    	<input type="hidden" name="next" value="{{ request.GET.next }}">
+	    	{% endif %}
+			<div class="login-btn">
+				<input class="submit" type="submit" value="Log in">
+			</div>
+	    </form>
+		<p style="margin-top: 30px;">Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+    </div>
+</div>
+{% endblock %}

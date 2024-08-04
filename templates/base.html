@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ggLNqAGwXHhIKsR9bFZksLtYiWTIUlz8ylU70Qjw4VU3iGO9tAN5lX66BnZ8SSz7" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/477b733705.js" crossorigin="anonymous"></script>
+
+
+<style>
+  
+body
+{
+  margin: 0;
+  padding: 0;
+} 
+
+.navbar{
+  z-index: 2px;
+  background-color: rgba(0, 0, 0, 0.044);
+}
+.navbar-toggler{
+  background-color: #007bff; 
+  color: gray;
+}
+
+.navbar-nav{
+  font-size:x-large;
+  
+}
+.nav-link{
+  color: #000000;
+  margin-right: 20px;
+  font-weight: bold;
+}
+.nav-link:hover{
+  background-color: #70E8A7;
+  color: #0b0b0b;
+  transition: all 0.3s;
+
+}
+.brand{
+  color:#007bff;
+  font-size: 35px;
+}
+.form-container{
+  box-shadow: 10px 15px 5px #7b7a7aa7;
+  border: 1px solid rgba(119, 118, 118, 0.533);
+  height: 500px;
+  margin-left: 20%;
+  width: 950px;
+  display: flex;
+  align-items: center;
+  margin-top: 120px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.form-style {
+  height: 500px;
+  width: 475px;
+  background-color: #FFFFFF;
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.my-form .helptext,ul{
+  display: none;
+}
+
+.form-style h1 {
+  color:#1b6dc5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-style input[type="text"],
+.form-style input[type="password"]{
+  box-shadow: 5px 5px 3px rgba(119, 118, 118, 0.533);
+  padding: 10px;
+  height: 2.5rem;
+  width: 400px;
+  font-size: large;
+  border-radius: 5px;
+  border: 1px solid rgba(119, 118, 118, 0.533);
+}
+
+input:focus {
+    outline: none;
+}
+
+.login-btn{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.submit {
+  font-size: 24px;
+  height: 42px;
+  margin-top: 35px;
+  display: block;
+  width: 150px;
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-style label{
+  display: block;
+  font-weight: 600;
+  color: black;
+  font-size: 1.2rem;
+  margin: 10px 0px;
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.welcome{
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}
+
+.left {
+  left: 15;
+  border-right: 0px #feda6a solid;
+}
+
+.right {
+  right: 0;
+  background-color: #404040;
+  border-left: 1px #feda6a solid;
+}
+.ani-form input[ type="submit"]{
+  margin: 50px auto;
+} 
+.ani-form button{
+  font-size: 20px;
+  height: 42px;
+  display: block;
+  width: 55px;
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px rgba(119, 118, 118, 0.533);
+  border: 1px solid rgba(119, 118, 118, 0.533);
+  transition: background-color 0.3s;
+}
+
+.ani-form input[type='text']{
+  box-shadow: 5px 5px 3px rgba(119, 118, 118, 0.533);
+  padding: 10px;
+  height: 42px;
+  width: 400px;
+  font-size: large;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid rgba(119, 118, 118, 0.533);
+}
+
+.mytext {
+  border:1px solid #393f4d;
+  border-right:none;
+  padding:4px;
+  margin:0px;
+  float:left;
+  height:32px;
+  overflow:hidden;
+  line-height:16px;
+  width: 300px;
+  margin-left: 54px;
+}
+.mic {
+    border:1px solid #393f4d;
+    background:#36a9da;
+    vertical-align:top;
+    padding:0px;
+    margin:0;
+    float:left;
+    height:42px;
+    overflow:hidden;
+    width:5em;
+    text-align:center;
+    line-height:16px;
+}
+  
+.enter-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.td {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.errorlist{
+    color: red;
+    font-weight: bold;
+}
+</style>
+<title>SignLink</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        <h1 class="brand">SignLink</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse show" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>               
+                <a class="nav-link" href="{% url 'animation' %}" >Convertor</a>
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+                {% if not user.is_authenticated %}
+                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+  </nav>
+  
+
+<div class="wrapper" >
+  {% block content %}
+  {% endblock %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
+
